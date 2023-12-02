@@ -28,7 +28,7 @@
 										<div class="mb-5 d-flex"> <a href="{{ url('/' . $page='index') }}"><img src="{{URL::asset('Dashboard/img/brand/favicon.png')}}" class="sign-favicon ht-40" alt="logo"></a><h1 class="main-logo1 ml-1 mr-0 my-auto tx-28">Ho<span>pi</span>tal</h1></div>
 										<div class="card-sigin">
 											<div class="main-signup-header">
-												<h2>Welcome back!</h2>
+												<h2>{{trans('Dashboard/login_trans.Welcome')}}</h2>
                                             <div class="form-group">
                                                 <label for="exampleFormControlSelect1"></label>
                                                 <select class="form-control" id="sectionChooser">
