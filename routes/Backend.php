@@ -4,6 +4,8 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\SectionController;
+use App\Http\Controllers\Dashboard\DoctorController;
+use App\Http\Controllers\Dashboard\SingleServiceController;
 
 // Mcamara\LaravelLocalization\Middleware;
 /*
@@ -38,10 +40,14 @@ Route::get('/dashboard/admin', function () {
 })->middleware(['auth:admin', 'verified'])->name('dashboard.admin');
 
         Route::middleware(['auth:admin'])->group(function () {
-
-        //############################# sections route ##########################################
-
+        //sections route
             Route::resource('Sections', SectionController::class);
+        // Doctors route
+        Route::resource('Doctors', DoctorController::class);
+        Route::post('update_password', [DoctorController::class, 'update_password'])->name('update_password');
+        Route::post('update_status', [DoctorController::class, 'update_status'])->name('update_status');
+        //Service route
+        Route::resource('Service', SingleServiceController::class);
         });
 
 require __DIR__.'/auth.php';

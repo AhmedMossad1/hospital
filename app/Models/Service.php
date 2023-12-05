@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Translatable;
-
-class SectionTranslation extends Model
+class Service extends Model
 {
+    use Translatable;
     use HasFactory;
-    protected $fillable = ['name','description'];
-    public $timestamps = false;
+    public $translatedAttributes = ['name'];
+    public $fillable= ['price','description','status'];
 }

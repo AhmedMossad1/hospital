@@ -7,6 +7,7 @@ return [
     'edit_sections'=>'Edit Sections',
     'delete_sections'=>'Delete Sections',
    'created_at'=>'Created_at',
+   'description'=>'Description',
    'Processes'=>'Processes',
    'submit'=>'Submit',
    'Close'=>'Close',

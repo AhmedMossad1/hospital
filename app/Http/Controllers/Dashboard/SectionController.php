@@ -31,9 +31,9 @@ class SectionController extends Controller
     }
 
 
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        return $this->Sections->show($id);
     }
 
 
