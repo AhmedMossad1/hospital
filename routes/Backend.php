@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\DoctorController;
 use App\Http\Controllers\Dashboard\SingleServiceController;
+use Livewire\Livewire;
+//use App\Livewire\Offers;
+
 
 // Mcamara\LaravelLocalization\Middleware;
 /*
@@ -18,6 +21,9 @@ use App\Http\Controllers\Dashboard\SingleServiceController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -48,6 +54,16 @@ Route::get('/dashboard/admin', function () {
         Route::post('update_status', [DoctorController::class, 'update_status'])->name('update_status');
         //Service route
         Route::resource('Service', SingleServiceController::class);
+        // GroupServices route
+        // Route::get('Add_GroupServices', CreateGroupServices::class)->name('Add_GroupServices');
+
+        //Route::get('Add_GroupServices', CreateNewGroupServices ::class,'livewire.GroupServicess.include_create');
+       // Route::view('GroupServices','livewire.GroupServices.include_create')->name('GroupServices');
+        Route::view('Offers','livewire.include_offer')->name('Offers');
+        Livewire::setUpdateRoute(function ($handle) {
+            return Route::post('/custom/livewire/update', $handle);
+        });
+
         });
 
 require __DIR__.'/auth.php';

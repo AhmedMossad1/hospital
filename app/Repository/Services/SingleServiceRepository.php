@@ -1,20 +1,12 @@
 <?php
-
-
 namespace App\Repository\Services;
-
-
 use App\Models\Service;
-
 class SingleServiceRepository implements \App\Interfaces\Services\SingleServiceRepositoryInterface
 {
-
     public function index(){
         $services = Service::all();
         return view('Dashboard.Services.Single Service.index',compact('services'));
-
     }
-
     public function store($request){
         try {
             $SingleService = new Service();

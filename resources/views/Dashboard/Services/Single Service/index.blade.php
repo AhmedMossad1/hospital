@@ -2,6 +2,7 @@
 @section('title')
     {{trans('Dashboard/main-sidebar_trans.Single_service')}}
 @stop
+
 @section('css')
     <!--Internal   Notify -->
     <link href="{{URL::asset('dashboard/plugins/notify/css/notifIt.css')}}" rel="stylesheet"/>
