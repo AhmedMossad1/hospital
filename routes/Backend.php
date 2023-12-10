@@ -8,6 +8,7 @@ use App\Http\Controllers\Dashboard\DoctorController;
 use App\Http\Controllers\Dashboard\SingleServiceController;
 use App\Http\Controllers\Dashboard\InsuranceController;
 use App\Http\Controllers\Dashboard\AmbulanceController;
+use App\Http\Controllers\Dashboard\PatientController;
 use Livewire\Livewire;
 //use App\Livewire\Offers;
 
@@ -60,6 +61,8 @@ Route::get('/dashboard/admin', function () {
         Route::resource('insurance', InsuranceController::class);
          //Ambulance route
         Route::resource('Ambulance', AmbulanceController::class);
+        //pationt route
+        Route::resource('Patients', PatientController::class);
         // GroupServices route
         Route::view('Offers','livewire.include_offer')->name('Offers');
         Livewire::setUpdateRoute(function ($handle) {
