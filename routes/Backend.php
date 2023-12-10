@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\DoctorController;
 use App\Http\Controllers\Dashboard\SingleServiceController;
+use App\Http\Controllers\Dashboard\InsuranceController;
 use Livewire\Livewire;
 //use App\Livewire\Offers;
 
@@ -56,13 +57,15 @@ Route::get('/dashboard/admin', function () {
         Route::resource('Service', SingleServiceController::class);
         // GroupServices route
         // Route::get('Add_GroupServices', CreateGroupServices::class)->name('Add_GroupServices');
-
+        Route::resource('insurance', InsuranceController::class);
         //Route::get('Add_GroupServices', CreateNewGroupServices ::class,'livewire.GroupServicess.include_create');
        // Route::view('GroupServices','livewire.GroupServices.include_create')->name('GroupServices');
         Route::view('Offers','livewire.include_offer')->name('Offers');
         Livewire::setUpdateRoute(function ($handle) {
             return Route::post('/custom/livewire/update', $handle);
         });
+        // Route::resource('insurance', InsuranceController::class);
+
 
         });
 
